@@ -1,0 +1,178 @@
+/* 전체 배경 더 어둡게 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #111316; /* 더 어두운 다크 */
+  color: #f5f6fa;
+}
+
+/* 메인 카드 (가운데 정렬 + 글래시) */
+.app {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 28px 24px 36px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 내부 컨텐츠 중앙정렬 */
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* ================================
+   초록색 안내 배너 (레퍼런스 동일 스타일)
+   ================================ */
+   .banner {
+    width: 100%;
+    max-width: 600px;
+  
+    margin: 10px 0 22px;
+    padding: 14px 22px;
+  
+    background: rgb(16, 66, 36); /* 참고 레퍼런스 계열 */
+    border: 1px solid rgb(21, 255, 161);
+  
+    border-radius: 50px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  
+    color: #e8f7ed;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 400;
+  
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.35),
+      inset 0 0 8px rgba(255, 255, 255, 0.08);
+  }
+  
+  /* 아이콘 (동그란 배경 + 레퍼런스 스타일) */
+  .banner-icon {
+    width: 22px;
+    height: 22px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+  
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+
+/* 설명 문구 */
+.desc {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: #dcdde1;
+}
+
+/* 리스트 전체도 중앙에서 내려오게 */
+#phrase-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* 카드들이 폭 꽉 채우도록 */
+}
+
+/* 글래시 카드 스타일 */
+.phrase-item {
+  padding: 14px 16px;
+  margin-bottom: 10px;
+
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  color: #f1f2f6;
+  font-size: 14px;
+  line-height: 1.5;
+
+  cursor: pointer;
+  user-select: none;
+
+  text-align: left; /* 카드 안의 문장은 읽기 편하게 좌측정렬 */
+
+  transition: background 0.15s ease, transform 0.06s ease,
+    box-shadow 0.15s ease;
+}
+
+.phrase-item:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.phrase-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+/* 복사 토스트 */
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  padding: 12px 22px;
+
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+
+  border-radius: 12px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+/* 방향키로 선택된 카드 하이라이트 */
+.phrase-item.selected {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(46, 213, 115, 0.8);
+  box-shadow: 0 0 0 2px rgba(46, 213, 115, 0.5);
+}
+/* 맨 아래 이미지 영역 */
+.footer-image-wrap {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-image {
+  display: block;
+  margin: 40px auto; /* 중앙정렬 + 위쪽 여백 */
+  
+  max-width: 20%;   /* 전하 요청: 5배 작게 */
+  height: auto;
+
+  border-radius: 12px;  /* 아주 약간의 둥글기만 (원치 않으면 0 가능) */
+}
+
+
